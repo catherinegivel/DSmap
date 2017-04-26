@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         TextView textView3 = (TextView) findViewById(R.id.textView3);
         textView3.setText(Arrivee.getNom());
 
+        /*TODO: Afficher la carte ( https://www.mapbox.com/android-sdk )
+            Bon courage ! */
     }
 
 }

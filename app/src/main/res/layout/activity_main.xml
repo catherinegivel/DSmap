@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.givel.catherine.dsmap.MainActivity">
+    tools:context="fr.givel.catherine.dsmap.MainActivity"
+
+    >
 
     <TextView
         android:id="@+id/textView4"
@@ -16,11 +18,11 @@
         android:layout_marginTop="8dp"
         android:text="@string/to"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.292"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.077" />
 
     <TextView
         android:id="@+id/textView3"
@@ -35,8 +37,8 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.682"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintVertical_bias="0.136" />
 
     <TextView
         android:id="@+id/depart"
@@ -51,8 +53,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.383"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintVertical_bias="0.016" />
 
     <TextView
         android:id="@+id/textView"
@@ -67,7 +69,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintVertical_bias="0.016" />
 
 </android.support.constraint.ConstraintLayout>
