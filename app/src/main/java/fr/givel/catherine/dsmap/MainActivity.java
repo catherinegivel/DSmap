@@ -31,11 +31,14 @@ public class MainActivity extends AppCompatActivity {
         TextView depart = (TextView) findViewById(R.id.depart);
         depart.setText(Depart.getNom());
 
-        TextView textView3 = (TextView) findViewById(R.id.textView3);
-        textView3.setText(Arrivee.getNom());
+        TextView arrivee = (TextView) findViewById(R.id.arrivee);
+        arrivee.setText(Arrivee.getNom());
 
         /*TODO: Afficher la carte ( https://www.mapbox.com/android-sdk )
             Bon courage ! */
+
+
+
     }
 
 }
