@@ -34,4 +34,6 @@ dependencies {
     compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:5.0.2@aar'){
         transitive=true
     }
+    compile ('com.mapbox.mapboxsdk:mapbox-android-services:1.0.0@aar'){
+        transitive=true     }
 }
