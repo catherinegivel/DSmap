@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.annotations.PolylineOptions;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         List<Coordonnees> list = new ArrayList<>();
 
         list.add(new Coordonnees("Accueil", 1,1));
-        list.add(new Coordonnees("Foyer", 47.1978933,-0.9982995));
+        list.add(new Coordonnees("Foyer", 46.1978933,-0.9982995));
         list.add(new Coordonnees("Site 6/5", 47.1980076,-0.996303));
 
         // Créer les objets depart et arrivee pour le trajet choisi
@@ -72,14 +73,23 @@ public class MainActivity extends AppCompatActivity {
                 map = mapboxMap;
 
                 // Affiche les points sur la carte
-                mapboxMap.addMarker(new MarkerOptions()
+                map.addMarker(new MarkerOptions()
                         .position(new LatLng(coorddepart.getLatitude(), coorddepart.getLongitude()))
                         .title("Depart")
                         .snippet(coorddepart.getNom()));
-                mapboxMap.addMarker(new MarkerOptions()
+                map.addMarker(new MarkerOptions()
                         .position(new LatLng(coordarrivee.getLatitude(), coordarrivee.getLongitude()))
                         .title("Arrivee")
                         .snippet(coordarrivee.getNom()));
+
+                // Centrer la carte sur le milieu du trajet
+                map.setCameraPosition(new CameraPosition.Builder()
+                        .target(new LatLng(
+                                (coorddepart.getLatitude() + coordarrivee.getLatitude())/2,
+                                (coorddepart.getLongitude() + coordarrivee.getLongitude())/2
+                            ))
+                        .build()
+                );
 
                 // Récupère le trajet depuis l'API
                 try {
@@ -123,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(
                         MainActivity.this,
                         "Le trajet fait " + currentRoute.getDistance() + " mètres.",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
 
                 // Dessiner le trajet sur la carte
                 drawRoute(currentRoute);
@@ -147,13 +157,14 @@ public class MainActivity extends AppCompatActivity {
             points[i] = new LatLng(
                     coordinates.get(i).getLatitude(),
                     coordinates.get(i).getLongitude());
+            Log.d(TAG, "Point ajouté");
         }
 
         // Afficher le dessin du trajet sur la carte
         map.addPolyline(new PolylineOptions()
                 .add(points)
                 .color(Color.parseColor("#009688"))
-                .width(5));
+                .width(50));
     }
 
     @Override
