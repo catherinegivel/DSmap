@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bordure"
-        tools:context="fr.givel.catherine.dsmap.MainActivity"
+        tools:context="fr.givel.catherine.dsmap.MapActivity"
         android:layout_marginTop="16dp"
         android:id="@+id/barre">
 

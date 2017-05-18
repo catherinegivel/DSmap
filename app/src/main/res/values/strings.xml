@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">DSmap</string>
     <string name="to">vers</string>
+    <string name="title_activity_choice">ChoiceActivity</string>
+   <string-array name="lieux">
+        <item>Accueil Dom Sortais</item>
+        <item>CDF Site 6/5</item>
+        <item>CDF Site 4/3</item>
+        <item>Chapelle</item>
+        <item>Internat</item>
+        <item>NDBN CDI</item>
+        <item>NDBN EUROPE</item>
+        <item>NDBN Hall</item>
+        <item>NDBN SVT</item>
+        <item>NDBN Technique</item>
+        <item>NDBN EUROPE</item>
+        <item>Pinier Accueil</item>
+        <item>Restaurant Libault</item>
+        <item>Restaurant Mongazon</item>
+    </string-array>
 </resources>

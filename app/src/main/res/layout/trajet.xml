@@ -8,7 +8,7 @@
     android:layout_marginLeft="10dp"
     android:layout_gravity="center_horizontal"
     android:background="@drawable/bordure"
-    tools:context="fr.givel.catherine.dsmap.MainActivity">
+    tools:context=".MapActivity">
 
     <TextView
         android:id="@+id/trajet"

@@ -30,9 +30,9 @@ import retrofit2.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "MapActivity";
 
     private MapView mapView;
     private MapboxMap map;
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 currentRoute = response.body().getRoutes().get(0);
                 Log.d(TAG, "Distance: " + currentRoute.getDistance());
                 Toast.makeText(
-                        MainActivity.this,
+                        MapActivity.this,
                         "Le trajet fait " + currentRoute.getDistance() + " mètres.",
                         Toast.LENGTH_SHORT).show();
 
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
                 Log.e(TAG, "Erreur: " + throwable.getMessage());
-                Toast.makeText(MainActivity.this, "Erreur: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MapActivity.this, "Erreur: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
