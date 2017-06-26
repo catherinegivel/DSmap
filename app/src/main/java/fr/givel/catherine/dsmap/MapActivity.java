@@ -42,7 +42,7 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, "pk.eyJ1IjoiY2F0aGd2bCIsImEiOiJjajI2Mm1iNnMwMDNrMnFvNmNtZzdlN28wIn0.eT6QBOmb44ig8jFNijKQ5w");
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_map);
 
         // Créer la liste des lieux (avec noms et coordonnées)
         List<Coordonnees> list = new ArrayList<>();
