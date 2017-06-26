@@ -30,6 +30,8 @@ import retrofit2.Response;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.R.id.list;
+
 public class MapActivity extends AppCompatActivity {
 
     private static final String TAG = "MapActivity";
@@ -44,16 +46,9 @@ public class MapActivity extends AppCompatActivity {
         Mapbox.getInstance(this, "pk.eyJ1IjoiY2F0aGd2bCIsImEiOiJjajI2Mm1iNnMwMDNrMnFvNmNtZzdlN28wIn0.eT6QBOmb44ig8jFNijKQ5w");
         setContentView(R.layout.activity_map);
 
-        // Créer la liste des lieux (avec noms et coordonnées)
-        List<Coordonnees> list = new ArrayList<>();
-
-        list.add(new Coordonnees("Accueil", 1,1));
-        list.add(new Coordonnees("Foyer", 47.1978933,-0.9982995));
-        list.add(new Coordonnees("Site 6/5", 47.1980076,-0.996303));
-
         // Créer les objets depart et arrivee pour le trajet choisi
-        final Coordonnees coorddepart = list.get(1);
-        final Coordonnees coordarrivee = list.get(2);
+        final Coordonnees coorddepart = (Coordonnees) getIntent().getExtras().getSerializable("Départ");
+        final Coordonnees coordarrivee = (Coordonnees) getIntent().getExtras().getSerializable("Arrivée");
 
         // Afficher le texte du trajet correspondant au trajet choisi
         TextView depart = (TextView) findViewById(R.id.depart);
